@@ -19,7 +19,7 @@ public class MoveBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 velocity = Vector2.zero; // Initialize velocity as zero
+        Vector2 velocity = Vector3.zero; // Initialize velocity as zero
 
 
         if (Input.GetKey(moveUp))

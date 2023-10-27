@@ -29,7 +29,10 @@ public class PlayerManager : MonoBehaviour
     {
         float x = Input.GetAxisRaw("Horizontal");
         float y = (x == 0) ? Input.GetAxisRaw("Vertical") : 0.0f;
-            
+
+        Vector2 movement = new Vector2(x, y).normalized * moveSpeed;
+        rb.velocity = movement;
+
         if (x != 0 || y != 0)
         {
             animator.SetFloat("x", x);
