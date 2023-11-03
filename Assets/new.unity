@@ -9730,7 +9730,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.9339623, g: 0.82065666, b: 0.80532223, a: 1}
+  m_BackGroundColor: {r: 0.203404, g: 0.20713519, b: 0.241, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -10143,7 +10143,7 @@ Transform:
   m_GameObject: {fileID: 1126753628}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.064, y: -0.822, z: 0}
+  m_LocalPosition: {x: 4.122, y: -0.789, z: 0}
   m_LocalScale: {x: 0.76085883, y: 0.76085883, z: 0.76085883}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11648,7 +11648,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 4fed19c82ced39948bf5aacb80aa8c29, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -12079,7 +12079,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: bad937c872402364d80e4e085fd4dda8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -12100,7 +12100,7 @@ Transform:
   m_GameObject: {fileID: 1730659438}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.879, y: -0.939, z: 0}
+  m_LocalPosition: {x: 3.92, y: -0.816, z: 0}
   m_LocalScale: {x: 0.48735, y: 0.48735, z: 0.48735}
   m_ConstrainProportionsScale: 0
   m_Children: []
