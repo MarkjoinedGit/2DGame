@@ -10,7 +10,7 @@ public class ItemCollector : MonoBehaviour
     private Renderer rend;
     public float delaySecond = 1;
     public string nameScene = "main";
-    public KeyCode selectKey = KeyCode.KeypadEnter;
+    public KeyCode selectKey = KeyCode.Space;
     private bool isSelected;
     // Start is called before the first frame update
     void Start()
