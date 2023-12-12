@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ObjectBehavior : MonoBehaviour
+public class ObjectHighlight : MonoBehaviour
 {
     public ObjectController controller;
     public Animator animator;

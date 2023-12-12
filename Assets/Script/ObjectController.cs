@@ -36,6 +36,7 @@ public class ObjectController : MonoBehaviour
     {
         if(m_openScene && Input.GetButtonDown("Open"))
         {
+            Debug.Log("press open");
             OnAnotherSceneOpenEvent.Invoke();
         }
     }

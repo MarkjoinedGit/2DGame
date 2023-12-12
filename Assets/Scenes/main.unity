@@ -21532,7 +21532,7 @@ MonoBehaviour:
   controller: {fileID: 1553198118}
   animator: {fileID: 1553198115}
   delaySecond: 1
-  nameScene: main
+  nameScene: tv_minigame
   selectKey: 32
 --- !u!114 &1553198118
 MonoBehaviour:
@@ -21581,7 +21581,19 @@ MonoBehaviour:
         m_CallState: 2
   OnAnotherSceneOpenEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1553198117}
+        m_TargetAssemblyTypeName: ObjectBehavior, Assembly-CSharp
+        m_MethodName: TurnAnotherScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1559947526 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8742538545776668643, guid: de5fb2bb2cd84f447b020d83ed1e9ac0, type: 3}
