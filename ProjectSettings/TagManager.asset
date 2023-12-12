@@ -4,17 +4,16 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - puzzleObject
-  - interactiveObject
+  - Logic
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - 
-  - 
+  - Treasure
+  - Enemy
   - Player
   - 
   - 
