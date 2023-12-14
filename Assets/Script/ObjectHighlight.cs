@@ -1,8 +1,9 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ObjectHighlight : MonoBehaviour
 {
@@ -11,11 +12,31 @@ public class ObjectHighlight : MonoBehaviour
     public float delaySecond = 1;
     public string nameScene = "main";
     public KeyCode selectKey = KeyCode.Space;
+    public GameObject puzzleSubScene;
+    public Button btn;
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void turnOnOffObject()
+    {
+        btn.interactable = true;
+        if (puzzleSubScene.activeSelf != true)
+            puzzleSubScene.SetActive(true);
+        else
+            puzzleSubScene.SetActive(false);
+        Debug.Log(puzzleSubScene.name);
+        Debug.Log("get in scene");
+        Debug.Log(puzzleSubScene.activeSelf);
+    }
+
+    public void clickToBack()
+    {
+        turnOnOffObject();
+        btn.interactable = false;
     }
 
     public void OnHighlight()
@@ -26,8 +47,14 @@ public class ObjectHighlight : MonoBehaviour
 
     public void TurnAnotherScreen()
     {
+        puzzleSubScene.SetActive(true);
         Debug.Log("Space");
-        ModeSelect();
+        //ModeSelect();
+    }
+
+    public void turnOffSubScene()
+    {
+        puzzleSubScene.SetActive(false);
     }
 
     public void OffHighlight()
