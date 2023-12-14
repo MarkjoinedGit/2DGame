@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class ObjectController : MonoBehaviour
 {
@@ -17,7 +18,6 @@ public class ObjectController : MonoBehaviour
     public UnityEvent OnHightLightEvent;
     public UnityEvent OffHightLightEvent;
     public UnityEvent OnAnotherSceneOpenEvent;
-   
 
     // Start is called before the first frame update
     private void Awake()

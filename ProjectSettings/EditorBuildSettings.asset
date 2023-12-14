@@ -5,16 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/n_puzzle_scenes.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/main.unity
     guid: 6012960ec1a3fd44e804e2c5ef1e1494
   - enabled: 1
-    path: Assets/Scenes/n_puzzle.unity
-    guid: 601c6a4fa0ee85d40b4801f7911aacb8
-  - enabled: 1
     path: Assets/Scenes/tv_minigame.unity
     guid: 17fd1b84f05f4fb41b163bac52f47ef5
+  - enabled: 1
+    path: Assets/Scenes/n_puzzle.unity
+    guid: 601c6a4fa0ee85d40b4801f7911aacb8
   m_configObjects: {}
