@@ -10,7 +10,7 @@ public class ObjectController : MonoBehaviour
     private bool m_Highlighted;
 
     private BoxCollider2D m_BoxCollider;
-    private bool m_openScene;
+    public bool m_openScene = true;
 
     [Header("EVents")]
     [Space]
@@ -34,10 +34,12 @@ public class ObjectController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(m_openScene && Input.GetButtonDown("Open"))
+        if(Input.GetButtonDown("Open"))
         {
-            Debug.Log("press open");
-            OnAnotherSceneOpenEvent.Invoke();
+            if(m_openScene)
+            {
+                OnAnotherSceneOpenEvent.Invoke();
+            }
         }
     }
 
