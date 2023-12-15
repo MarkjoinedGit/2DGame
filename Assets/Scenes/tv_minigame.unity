@@ -2260,7 +2260,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1196174945
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2581,7 +2581,7 @@ MonoBehaviour:
   scoreText: {fileID: 427378597}
   gameIsOver: 0
   gameIsFinish: 0
-  enemyMax: 10
+  enemyMax: 30
   gameOverScreen: {fileID: 848245107}
   gameWinningScreen: {fileID: 609267212}
 --- !u!4 &1621118095

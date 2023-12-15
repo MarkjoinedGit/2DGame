@@ -7,16 +7,21 @@ using System;
 
 public class SceneLoader : MonoBehaviour
 {
+    
     public GameObject LoaderUI;
     public Slider progressSlider;
 
     public void LoadScene(string sceneName)
     {
+        //SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+      
         StartCoroutine(LoadScene_Coroutine(sceneName));
     }
 
     public void UnloadScene(string sceneName)
     {
+        //SceneManager.UnloadSceneAsync(sceneName);
+       
         StartCoroutine(UnloadScene_Coroutine(sceneName));
     }
 
