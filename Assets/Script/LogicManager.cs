@@ -36,7 +36,7 @@ public class LogicManager : MonoBehaviour
 
     public void restartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("tv_minigame");
     }
 
     public void revealNumber()
