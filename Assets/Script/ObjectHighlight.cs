@@ -14,13 +14,15 @@ public class ObjectHighlight : MonoBehaviour
     public string nameScene = "main";
     public KeyCode selectKey = KeyCode.Space;
     public GameObject puzzleSubScene;
-    public Button btn;
+    private Button btn;
 
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (puzzleSubScene == null)
+            puzzleSubScene = new GameObject();
+        btn  = puzzleSubScene.GetComponentInChildren<Button>();
     }
 
     public void turnOnOffObject()
