@@ -11,7 +11,7 @@ public class ObjectController : MonoBehaviour
     private bool m_Highlighted;
 
     private BoxCollider2D m_BoxCollider;
-    public bool m_openScene = true;
+    public bool m_openScene = false;
 
     [Header("EVents")]
     [Space]

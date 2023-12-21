@@ -6,9 +6,12 @@ public class ObjectClickBehaviour : MonoBehaviour
 {
     [SerializeField] private string requiredItem;
     private List<string> items;
+    [SerializeField] private GameObject itemToCollect;
     void Start()
     {
         items = new List<string>();
+        if (itemToCollect == null)
+            itemToCollect = new GameObject();
     }
 
     // Update is called once per frame
@@ -29,5 +32,6 @@ public class ObjectClickBehaviour : MonoBehaviour
     {
         Debug.Log("click clothes");
         gameObject.SetActive(false);
+        itemToCollect.SetActive(false);
     }
 }

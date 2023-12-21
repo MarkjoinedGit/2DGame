@@ -20,9 +20,8 @@ public class ObjectHighlight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (puzzleSubScene == null)
-            puzzleSubScene = new GameObject();
-        btn  = puzzleSubScene.GetComponentInChildren<Button>();
+        if (puzzleSubScene != null)
+            btn  = puzzleSubScene.GetComponentInChildren<Button>();   
     }
 
     public void turnOnOffObject()
@@ -32,9 +31,6 @@ public class ObjectHighlight : MonoBehaviour
             puzzleSubScene.SetActive(true);
         else
             puzzleSubScene.SetActive(false);
-        Debug.Log(puzzleSubScene.name);
-        Debug.Log("get in scene");
-        Debug.Log(puzzleSubScene.activeSelf);
     }
 
     public void clickToBack()
@@ -46,19 +42,6 @@ public class ObjectHighlight : MonoBehaviour
     public void OnHighlight()
     {
         animator.SetBool("IsHighLight", true);
-       
-    }
-
-    public void TurnAnotherScreen()
-    {
-        puzzleSubScene.SetActive(true);
-        Debug.Log("Space");
-        //ModeSelect();
-    }
-
-    public void turnOffSubScene()
-    {
-        puzzleSubScene.SetActive(false);
     }
 
     public void OffHighlight()

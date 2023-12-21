@@ -6,14 +6,15 @@ using UnityEngine;
 public class n_puzzle_scripts : MonoBehaviour
 {
     [SerializeField]private Transform emptySpace = null;
-    private Camera _camera;
+    [SerializeField] private Camera _camera;
     [SerializeField] private TileScripts[] tiles;
     private int emptySpaceIndex = 8;
     public Boolean _isFinished = false;
+    public GameObject gameWinningScreen;
     // Start is called before the first frame update
     void Start()
     {
-        _camera = Camera.main;
+        _camera = gameObject.GetComponent<Camera>();
         Shuffle();
     }
 
@@ -24,7 +25,7 @@ public class n_puzzle_scripts : MonoBehaviour
         {
             Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
-            if(hit)
+            if (hit)
             {
                 if (Vector2.Distance(emptySpace.position, hit.transform.position) < 3)
                 {
@@ -33,7 +34,6 @@ public class n_puzzle_scripts : MonoBehaviour
                     emptySpace.position = thisTile.targetPosition;
                     thisTile.targetPosition = lastEmptySpacePosition;
                     int index = findIndex(thisTile);
-                    Debug.Log(tiles.Length);
                     tiles[emptySpaceIndex] = tiles[index];
                     tiles[index]  = null;
                     emptySpaceIndex = index;
@@ -56,7 +56,8 @@ public class n_puzzle_scripts : MonoBehaviour
             if (correctTiles == tiles.Length - 1)
             {
                 _isFinished = true;
-                Debug.Log("You won!!!");
+                gameWinningScreen.SetActive(true);
+                PlayerPrefs.SetInt("WardrobeUnlock", 2);
             }
         }
     }
@@ -86,8 +87,6 @@ public class n_puzzle_scripts : MonoBehaviour
                 tiles[random] = tile;
             }
             inversion = getInversion();
-            Debug.Log(inversion);
-            Debug.Log("Puzzle completed!!!");
         } while (inversion % 2 != 0);
     }
 
