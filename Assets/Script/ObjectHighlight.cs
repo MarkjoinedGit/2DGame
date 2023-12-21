@@ -14,6 +14,7 @@ public class ObjectHighlight : MonoBehaviour
     public string nameScene = "main";
     public KeyCode selectKey = KeyCode.Space;
     public GameObject puzzleSubScene;
+    public GameObject bagScene;
     public Button btn;
 
 
@@ -27,9 +28,15 @@ public class ObjectHighlight : MonoBehaviour
     {
         btn.interactable = true;
         if (puzzleSubScene.activeSelf != true)
+        {
+            bagScene.SetActive(false);
             puzzleSubScene.SetActive(true);
+        }
         else
+        {
+            bagScene.SetActive(true);
             puzzleSubScene.SetActive(false);
+        }
         Debug.Log(puzzleSubScene.name);
         Debug.Log("get in scene");
         Debug.Log(puzzleSubScene.activeSelf);
