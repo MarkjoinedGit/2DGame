@@ -41292,7 +41292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 511c84c463de11f49a62440b356818c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredItem: DirtyClothes
+  requiredItem: Dirty Shirt
 --- !u!114 &2106239179
 MonoBehaviour:
   m_ObjectHideFlags: 0

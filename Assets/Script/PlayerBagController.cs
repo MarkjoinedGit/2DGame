@@ -17,24 +17,21 @@ public class PlayerBagController : MonoBehaviour
 
     public void OnOffscrollview()
     {
+        LoadItemsInPlayerBag();
         if (scrollview.activeSelf)
             scrollview.SetActive(false);
-        else
-        {
-            LoadItemsInPlayerBag();
-            scrollview.SetActive(true);
-        } 
+        else             
+            scrollview.SetActive(true);    
     }
 
     public void LoadItemsInPlayerBag()
     {
+        resetBagUI();
         for (int i = 0; i < playerBag.Items.Count; i++)
         {
             GameObject itemSlot = scrollviewContainer.transform.GetChild(i).gameObject;
-            DestroyChildrenObjects(itemSlot);
             ConvertGraphicToImage(itemSlot, playerBag.Items[i].GetComponent<Button>().targetGraphic);
         }
-      
     }
 
     private void ConvertGraphicToImage(GameObject parent, Graphic graphic)
@@ -60,6 +57,15 @@ public class PlayerBagController : MonoBehaviour
         for (int i = childCount - 1; i >= 0; i--)
         {
             DestroyImmediate(gameObject.transform.GetChild(i).gameObject);
+        }
+    }
+
+    private void resetBagUI()
+    {
+        int childCount = scrollviewContainer.transform.childCount;
+        for (int i = childCount - 1; i >= 0; i--)
+        {
+            DestroyChildrenObjects(scrollviewContainer.transform.GetChild(i).gameObject);
         }
     }
 
