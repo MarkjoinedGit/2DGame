@@ -77,6 +77,30 @@ public class PlayerBag
         return false;
     }
 
+    public bool removeItems(List<string> names)
+    {
+        bool atLeastOneRemoved = false;
+
+        foreach (string name in names)
+        {
+            GameObject itemToRemove = items.Find(item => item.name.Equals(name));
+
+            if (itemToRemove != null)
+            {
+                items.Remove(itemToRemove);
+                atLeastOneRemoved = true;
+            }
+        }
+
+        if (!atLeastOneRemoved)
+        {
+            Debug.Log("No items found in my bag!");
+            return false;
+        }
+
+        return true;
+    }
+
     public void clear()
     {
         items.Clear();

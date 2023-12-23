@@ -1,18 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SafeDepositController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject OpenSafeScene;
+    public void openSafe()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        OpenSafeScene.SetActive(true);
+        gameObject.SetActive(false);
     }
 }

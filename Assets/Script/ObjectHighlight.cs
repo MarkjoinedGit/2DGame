@@ -14,8 +14,18 @@ public class ObjectHighlight : MonoBehaviour
     public string nameScene = "main";
     public KeyCode selectKey = KeyCode.Space;
     public GameObject puzzleSubScene;
-    public GameObject bagScene;
+    private GameObject bagScene;
     private Button btn;
+
+    private void Awake()
+    {
+        bagScene = GameObject.FindGameObjectWithTag("Bag");
+        if (bagScene == null)
+        {
+            Debug.Log("null");
+            bagScene = new GameObject();
+        }
+    }
 
 
     // Update is called once per frame

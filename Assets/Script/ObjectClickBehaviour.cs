@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class ObjectClickBehaviour : MonoBehaviour
 {
-    [SerializeField] private string requiredItem;
+    [SerializeField] private List<string> requiredItems;
     [SerializeField] private GameObject itemToCollect;
+    [SerializeField] private Animator animator;
     private PlayerBag playerBag;
 
     void Start()
     {
+        if (animator == null)
+            animator = new Animator();
         playerBag = PlayerBag.Instance;
         if (itemToCollect == null)
             itemToCollect = new GameObject();
@@ -17,8 +20,13 @@ public class ObjectClickBehaviour : MonoBehaviour
 
     public void clickToExecute()
     {
-        if (playerBag.removeItem(requiredItem))
+        if (playerBag.removeItems(requiredItems))
+        {
+            animator.SetBool("IsExecuted", true);
+            if (gameObject.name == "Door")
+                PlayerPrefs.SetInt("Door1Open", 2);
             Debug.Log("Valid action");
+        }
         else
             Debug.Log("Invalid Aciont");
     }
@@ -28,7 +36,7 @@ public class ObjectClickBehaviour : MonoBehaviour
         if (playerBag.addItem(gameObject))
         {
             gameObject.SetActive(false);
-            //itemToCollect.SetActive(false);
+            itemToCollect.SetActive(false);
         }    
     }
 }
