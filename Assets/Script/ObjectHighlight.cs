@@ -25,6 +25,8 @@ public class ObjectHighlight : MonoBehaviour
             Debug.Log("null");
             bagScene = new GameObject();
         }
+        if (puzzleSubScene == null)
+            puzzleSubScene = new GameObject();
     }
 
 
