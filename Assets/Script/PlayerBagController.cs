@@ -6,11 +6,11 @@ public class PlayerBagController : MonoBehaviour
 {
     public GameObject scrollview;
     public GameObject scrollviewContainer;
-    public PlayerBag playerBag;
+    public Player player;
 
     void Start()
     {
-        playerBag = PlayerBag.Instance;
+        player = Player.Instance;
     }
 
     public void OnOffscrollview()
@@ -25,10 +25,10 @@ public class PlayerBagController : MonoBehaviour
     public void LoadItemsInPlayerBag()
     {
         resetBagUI();
-        for (int i = 0; i < playerBag.Items.Count; i++)
+        for (int i = 0; i < player.Bag.Items.Count; i++)
         {
             GameObject itemSlot = scrollviewContainer.transform.GetChild(i).gameObject;
-            ConvertGraphicToImage(itemSlot, playerBag.Items[i].GetComponent<Button>().targetGraphic);
+            ConvertGraphicToImage(itemSlot, player.Bag.Items[i].GetComponent<Button>().targetGraphic);
         }
     }
 

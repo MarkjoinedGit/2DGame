@@ -9,7 +9,7 @@ public class PlayerBag
 
     public List<GameObject> Items { get { return items; } set { items = value; } }
 
-    private int maxSize = 0;
+    private int maxSize = 10;
 
     public int MaxSize
     {
@@ -18,27 +18,11 @@ public class PlayerBag
         {
             if (maxSize >= 0)
                 maxSize = value;
-            else maxSize = 0;
+            else maxSize = 10;
         }
     }
 
-    private PlayerBag() { }
-
-    private static PlayerBag instance;
-
-    public static PlayerBag Instance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                instance = new PlayerBag();
-                instance.maxSize = 10;
-            }
-
-            return instance;
-        }
-    }
+    public PlayerBag() { }
 
     public bool addItem(GameObject item)
     {
