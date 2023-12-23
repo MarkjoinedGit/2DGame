@@ -79,7 +79,17 @@ public class PlayerBag
 
     public bool removeItems(List<string> names)
     {
-        bool atLeastOneRemoved = false;
+        int count = 0;
+
+        foreach (string name in names)
+        {
+            GameObject itemToRemove = items.Find(item => item.name.Equals(name));
+            if (itemToRemove != null)
+                count++;
+        }
+        if (count != names.Count)
+            return false;
+
 
         foreach (string name in names)
         {
@@ -88,14 +98,7 @@ public class PlayerBag
             if (itemToRemove != null)
             {
                 items.Remove(itemToRemove);
-                atLeastOneRemoved = true;
             }
-        }
-
-        if (!atLeastOneRemoved)
-        {
-            Debug.Log("No items found in my bag!");
-            return false;
         }
 
         return true;
