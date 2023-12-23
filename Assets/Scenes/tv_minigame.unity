@@ -310,74 +310,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 94455801}
   m_CullTransparentMesh: 1
---- !u!1 &131932694
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 131932697}
-  - component: {fileID: 131932696}
-  - component: {fileID: 131932695}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &131932695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 131932694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
---- !u!114 &131932696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 131932694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
---- !u!4 &131932697
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 131932694}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &278469134
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,6 +592,7 @@ GameObject:
   - component: {fileID: 374902993}
   - component: {fileID: 374902992}
   - component: {fileID: 374902991}
+  - component: {fileID: 374902994}
   m_Layer: 5
   m_Name: Button (Legacy)
   m_TagString: Untagged
@@ -731,16 +664,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1621118094}
-        m_TargetAssemblyTypeName: LogicManager, Assembly-CSharp
-        m_MethodName: restartGame
-        m_Mode: 1
+      - m_Target: {fileID: 374902994}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: UnloadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: tv_minigame
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &374902992
@@ -781,6 +714,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 374902989}
   m_CullTransparentMesh: 1
+--- !u!114 &374902994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374902989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85c3e76242d77b74598dffaa706fc06c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LoaderUI: {fileID: 673518184}
+  progressSlider: {fileID: 816050106}
 --- !u!1 &427378595
 GameObject:
   m_ObjectHideFlags: 0
@@ -2558,6 +2505,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1621118095}
   - component: {fileID: 1621118094}
+  - component: {fileID: 1621118096}
   m_Layer: 0
   m_Name: LogicManager
   m_TagString: Logic
@@ -2581,7 +2529,7 @@ MonoBehaviour:
   scoreText: {fileID: 427378597}
   gameIsOver: 0
   gameIsFinish: 0
-  enemyMax: 30
+  enemyMax: 10
   gameOverScreen: {fileID: 848245107}
   gameWinningScreen: {fileID: 609267212}
 --- !u!4 &1621118095
@@ -2599,6 +2547,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1621118096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621118093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85c3e76242d77b74598dffaa706fc06c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LoaderUI: {fileID: 673518184}
+  progressSlider: {fileID: 816050106}
 --- !u!1 &1998363965
 GameObject:
   m_ObjectHideFlags: 0
@@ -2624,7 +2586,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1998363965}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1998363967
 Camera:
   m_ObjectHideFlags: 0
@@ -2816,7 +2778,6 @@ SceneRoots:
   - {fileID: 981773758}
   - {fileID: 278469136}
   - {fileID: 352714472}
-  - {fileID: 131932697}
   - {fileID: 1621118095}
   - {fileID: 1149696041}
   - {fileID: 319886420}

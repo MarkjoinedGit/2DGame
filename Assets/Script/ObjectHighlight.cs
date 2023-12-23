@@ -14,27 +14,41 @@ public class ObjectHighlight : MonoBehaviour
     public string nameScene = "main";
     public KeyCode selectKey = KeyCode.Space;
     public GameObject puzzleSubScene;
+    private GameObject bagScene;
     private Button btn;
+
+    private void Awake()
+    {
+        bagScene = GameObject.FindGameObjectWithTag("Bag");
+        if (bagScene == null)
+        {
+            Debug.Log("null");
+            bagScene = new GameObject();
+        }
+    }
 
 
     // Update is called once per frame
     void Update()
     {
-        if (puzzleSubScene == null)
-            puzzleSubScene = new GameObject();
-        btn  = puzzleSubScene.GetComponentInChildren<Button>();
+        if (puzzleSubScene != null)
+            btn  = puzzleSubScene.GetComponentInChildren<Button>();   
     }
 
     public void turnOnOffObject()
     {
         btn.interactable = true;
         if (puzzleSubScene.activeSelf != true)
+        {
+            bagScene.SetActive(false);
             puzzleSubScene.SetActive(true);
+        }
         else
+        {
+            bagScene.SetActive(true);
             puzzleSubScene.SetActive(false);
-        Debug.Log(puzzleSubScene.name);
-        Debug.Log("get in scene");
-        Debug.Log(puzzleSubScene.activeSelf);
+        }
+           
     }
 
     public void clickToBack()
@@ -46,19 +60,6 @@ public class ObjectHighlight : MonoBehaviour
     public void OnHighlight()
     {
         animator.SetBool("IsHighLight", true);
-       
-    }
-
-    public void TurnAnotherScreen()
-    {
-        puzzleSubScene.SetActive(true);
-        Debug.Log("Space");
-        //ModeSelect();
-    }
-
-    public void turnOffSubScene()
-    {
-        puzzleSubScene.SetActive(false);
     }
 
     public void OffHighlight()

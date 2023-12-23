@@ -4,24 +4,28 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
+using UnityEngine.EventSystems;
+using UnityEngine.Events;
 
 public class SceneLoader : MonoBehaviour
-{
-    
+{ 
     public GameObject LoaderUI;
     public Slider progressSlider;
+
+
+    private void Start()
+    {
+    }
 
     public void LoadScene(string sceneName)
     {
         //SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
-      
         StartCoroutine(LoadScene_Coroutine(sceneName));
     }
 
     public void UnloadScene(string sceneName)
     {
         //SceneManager.UnloadSceneAsync(sceneName);
-       
         StartCoroutine(UnloadScene_Coroutine(sceneName));
     }
 

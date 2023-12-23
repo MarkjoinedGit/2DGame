@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class TileScripts : MonoBehaviour
 {
-    public Vector3 targetPosition;
-    private Vector3 correctPosition;
+    public Vector2 targetPosition;
+    public Vector2 correctPosition;
     public SpriteRenderer _sprite;
     public int number;
     public Boolean isInRightPlace = false;
@@ -22,7 +22,7 @@ public class TileScripts : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.Lerp(transform.position, targetPosition, 0.15f);
+        transform.position = Vector2.Lerp(transform.position, targetPosition, 0.2f);
         if (targetPosition == correctPosition)
         {
             isInRightPlace = true;
