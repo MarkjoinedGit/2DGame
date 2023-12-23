@@ -21,7 +21,7 @@ public class ObjectClickBehaviour : MonoBehaviour
             objectToShow = new GameObject();
     }
 
-    public void clickToExecute()
+    public void clickToExecute(float delay)
     {
         if (playerBag.removeItems(requiredItems) || requiredItems.Count == 0)
         {
@@ -29,7 +29,7 @@ public class ObjectClickBehaviour : MonoBehaviour
             if (gameObject.name == "Door")
                 PlayerPrefs.SetInt("Door1Open", 2);
             Debug.Log("Valid action");
-            StartCoroutine(ShowObjectAfterDelay(2f));
+            StartCoroutine(ShowObjectAfterDelay(delay));
         }
         else
             Debug.Log("Invalid Aciont");
