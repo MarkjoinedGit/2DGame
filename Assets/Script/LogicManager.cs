@@ -15,6 +15,11 @@ public class LogicManager : MonoBehaviour
     public GameObject gameOverScreen;
     public GameObject gameWinningScreen;
 
+    private void Start()
+    {
+        PlayerPrefs.SetInt("mini_game_end", 1);
+    }
+
     private void Update()
     {
         if (Convert.ToInt16(scoreText.text) == enemyMax)
@@ -32,6 +37,7 @@ public class LogicManager : MonoBehaviour
     {
         gameOverScreen.SetActive(true);
         gameIsOver = true;
+        PlayerPrefs.SetInt("mini_game_end", 2);
     }
 
     public void restartGame()

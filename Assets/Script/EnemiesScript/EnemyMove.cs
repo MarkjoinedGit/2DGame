@@ -21,7 +21,7 @@ public class EnemyMove : MonoBehaviour
         if (!m_logic.gameIsOver)
             transform.position = transform.position + (Vector3.left * m_MoveSpeed) * Time.deltaTime;
 
-        if (transform.position.x < m_DeadZone)
+        if (transform.position.x < m_DeadZone || PlayerPrefs.GetInt("mini_game_end", 1) == 2)
             Destroy(gameObject);
     }
 }
