@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SceneListControler : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class SceneListControler : MonoBehaviour
 
     public void OnOffScrollView()
     {
+        highLightSceneFinish();
         if (scrollView.activeSelf.Equals(false))
         {
             scrollView.SetActive(true);
@@ -22,5 +24,18 @@ public class SceneListControler : MonoBehaviour
         }
         scrollView.SetActive(false);
     }
+
+    public void highLightSceneFinish()
+    {
+        for (int i = 0; i < player.Bag.Items.Count; i++)
+        {
+            if (scrollViewContainer.transform.GetChild(i).gameObject.CompareTag(player.ScenesAreFinished[i]))
+            {
+                scrollViewContainer.transform.GetChild(i).gameObject.GetComponent<Image>().color = Color.green;
+            }
+        }
+    }
+
+
 
 }
