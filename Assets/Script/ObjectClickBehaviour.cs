@@ -8,13 +8,13 @@ public class ObjectClickBehaviour : MonoBehaviour
     [SerializeField] private GameObject itemToCollect;
     [SerializeField] private Animator animator;
     [SerializeField] private GameObject objectToShow;
-    private PlayerBag playerBag;
+    private Player player;
 
     void Start()
     {
         if (animator == null)
             animator = new Animator();
-        playerBag = PlayerBag.Instance;
+        player = Player.Instance;
         if (itemToCollect == null)
             itemToCollect = new GameObject();
         if (objectToShow == null)
@@ -23,7 +23,7 @@ public class ObjectClickBehaviour : MonoBehaviour
 
     public void clickToExecute(float delay)
     {
-        if (playerBag.removeItems(requiredItems) || requiredItems.Count == 0)
+        if (player.Bag.removeItems(requiredItems) || requiredItems.Count == 0)
         {
             animator.SetBool("IsExecuted", true);
             if (gameObject.name == "Door")
@@ -43,7 +43,7 @@ public class ObjectClickBehaviour : MonoBehaviour
 
     public void clickToCollect()
     {
-        if (playerBag.addItem(gameObject))
+        if (player.Bag.addItem(gameObject))
         {
             gameObject.SetActive(false);
             itemToCollect.SetActive(false);
