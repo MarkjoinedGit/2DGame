@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class KnightMovement : MonoBehaviour
@@ -9,7 +7,6 @@ public class KnightMovement : MonoBehaviour
     public Animator animator;
     bool jump = false;
 
-    // Update is called once per frame
     void Update()
     {
         if(Input.GetButtonDown("Jump") && knightController.KnightIsAlive && !manager.gameIsFinish)

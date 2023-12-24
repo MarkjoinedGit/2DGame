@@ -1,20 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System;
-using UnityEngine.EventSystems;
-using UnityEngine.Events;
 
 public class SceneLoader : MonoBehaviour
 { 
     public GameObject LoaderUI;
     public Slider progressSlider;
-
-    private void Start()
-    {
-    }
 
     public void LoadScene(string sceneName)
     {

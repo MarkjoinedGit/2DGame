@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveBehaviour : MonoBehaviour
@@ -10,18 +8,14 @@ public class MoveBehaviour : MonoBehaviour
     public KeyCode moveRight;
     public KeyCode moveLeft;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        Vector2 velocity = Vector3.zero; // Initialize velocity as zero
-
-
+        Vector2 velocity = Vector3.zero;
         if (Input.GetKey(moveUp))
             velocity.y = 3;
         if (Input.GetKey(moveDown))
@@ -30,8 +24,6 @@ public class MoveBehaviour : MonoBehaviour
             velocity.x = 3;
         if (Input.GetKey(moveLeft))
             velocity.x = -3;
-
-        // Set the Rigidbody2D velocity
         rb.velocity = velocity;
     }
 }

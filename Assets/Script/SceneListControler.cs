@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,7 +25,7 @@ public class SceneListControler : MonoBehaviour
 
     public void highLightSceneFinish()
     {
-        for (int i = 0; i < player.Bag.Items.Count; i++)
+        for (int i = 0; i < player.ScenesAreFinished.Count; i++)
         {
             if (scrollViewContainer.transform.GetChild(i).gameObject.CompareTag(player.ScenesAreFinished[i]))
             {
@@ -35,7 +33,4 @@ public class SceneListControler : MonoBehaviour
             }
         }
     }
-
-
-
 }

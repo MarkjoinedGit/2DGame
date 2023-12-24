@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class Player
 {
@@ -20,7 +18,6 @@ public class Player
             }
             return instance; 
         }
-    
     }
 
     private Player()
@@ -28,6 +25,4 @@ public class Player
         bag = new PlayerBag();
         scenesAreFinished = new List<string>();
     }
-
-
 }

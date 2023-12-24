@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,19 +9,7 @@ public class PasswordInputerController : MonoBehaviour
     private string password = "1104";
     [SerializeField] private GameObject doorClose;
     [SerializeField] private GameObject doorOpen;
-    //public GameObject numberInput;
     private int colorIndex = 0;
-    // Start is called before the first frame update
-    void Awake()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void inputNumber(int number)
     {
@@ -56,5 +43,4 @@ public class PasswordInputerController : MonoBehaviour
             PlayerPrefs.SetInt("DoorMainOpen", 2);
         }
     }
-
 }

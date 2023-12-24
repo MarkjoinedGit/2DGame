@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,19 +9,13 @@ public class PasswordInputController : MonoBehaviour
     public GameObject safeDeposit;
     public GameObject numberInput;
     private SafeDepositController safeController;
-    // Start is called before the first frame update
+
     void Awake()
     {
         m_Input = gameObject.GetComponent<Text>();
         textFromInput = "";
         password = "2812";
         safeController = safeDeposit.GetComponent<SafeDepositController>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void inputNumber(int number)

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DoorUnlock : MonoBehaviour
@@ -8,7 +6,7 @@ public class DoorUnlock : MonoBehaviour
     [SerializeField] private GameObject doorOpen;
     [SerializeField] private GameObject unsceneMainDoor;
     private Player player;
-    // Start is called before the first frame update
+
     void Start()
     {
         player =Player.Instance;
@@ -18,7 +16,6 @@ public class DoorUnlock : MonoBehaviour
             unsceneMainDoor = new GameObject();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (PlayerPrefs.GetInt("Door1Open", 1) == 2 && gameObject.name == "DoorClose")

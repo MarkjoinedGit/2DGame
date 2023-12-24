@@ -7,12 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class ObjectController : MonoBehaviour
 {
-    [SerializeField] private LayerMask playerObject;
-    private bool m_Highlighted;
-
-    private BoxCollider2D m_BoxCollider;
     public bool m_openScene = false;
-
     [Header("EVents")]
     [Space]
     public UnityEvent OnHightLightEvent;
@@ -22,8 +17,6 @@ public class ObjectController : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        m_BoxCollider = GetComponent<BoxCollider2D>();
-
         if (OnHightLightEvent == null)
             OnHightLightEvent = new UnityEvent();
         if (OffHightLightEvent == null)
@@ -34,9 +27,9 @@ public class ObjectController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(Input.GetButtonDown("Open"))
+        if (Input.GetButtonDown("Open"))
         {
-            if(m_openScene)
+            if (m_openScene)
             {
                 OnAnotherSceneOpenEvent.Invoke();
             }

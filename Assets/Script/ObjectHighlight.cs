@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class ObjectHighlight : MonoBehaviour
@@ -29,8 +25,6 @@ public class ObjectHighlight : MonoBehaviour
             puzzleSubScene = new GameObject();
     }
 
-
-    // Update is called once per frame
     void Update()
     {
         if (puzzleSubScene != null)
@@ -49,8 +43,7 @@ public class ObjectHighlight : MonoBehaviour
         {
             bagScene.SetActive(true);
             puzzleSubScene.SetActive(false);
-        }
-           
+        }        
     }
 
     public void clickToBack()

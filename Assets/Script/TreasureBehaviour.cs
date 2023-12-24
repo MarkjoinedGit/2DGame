@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TreasureBehaviour : MonoBehaviour
@@ -9,13 +7,11 @@ public class TreasureBehaviour : MonoBehaviour
 
     private LogicManager m_logic;
 
-    // Start is called before the first frame update
     void Start()
     {
         m_logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicManager>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (m_logic.gameIsFinish && !m_logic.gameIsOver)
